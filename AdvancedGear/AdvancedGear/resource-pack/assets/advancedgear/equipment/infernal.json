@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "advancedgear:infernal"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "advancedgear:infernal"
+      }
+    ]
+  }
+}
