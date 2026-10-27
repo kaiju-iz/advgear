@@ -1,0 +1,28 @@
+# Crafting-table recipes for materials and custom weapons.
+# Upgrade recipes (Netherite -> Infernal) are generated automatically from items.yml (upgrade-from)
+# and use the smithing table: Template + Netherite item + Ingot.
+# Ingredient syntax: VANILLA_MATERIAL  or  custom:<item id>   (custom ingredients must match exactly)
+recipes:
+  infernal_ingot:
+    type: shapeless
+    result: infernal_ingot
+    amount: 1
+    ingredients: ["custom:infernal_shard", "custom:infernal_shard", "custom:infernal_shard", NETHERITE_INGOT]
+
+  greatsword:
+    type: shaped
+    result: greatsword
+    shape: [" I ", "INI", " B "]
+    ingredients: {I: "custom:infernal_ingot", N: NETHERITE_SWORD, B: BLAZE_ROD}
+
+  ember_dagger:
+    type: shaped
+    result: ember_dagger
+    shape: ["I", "N", "B"]
+    ingredients: {I: "custom:infernal_ingot", N: NETHERITE_INGOT, B: BLAZE_ROD}
+
+  magma_warhammer:
+    type: shaped
+    result: magma_warhammer
+    shape: ["III", " M ", " B "]
+    ingredients: {I: "custom:infernal_ingot", M: MACE, B: BLAZE_ROD}

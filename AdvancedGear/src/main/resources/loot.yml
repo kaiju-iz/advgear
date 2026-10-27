@@ -1,0 +1,21 @@
+# Mob drops only apply when a PLAYER lands the kill. Mobs from spawners and spawn eggs never drop these
+# (anti-farming). Chest loot is added when a vanilla loot table generates (so it cannot be farmed).
+mob-drops:
+  WITHER:
+    - {item: infernal_shard, chance: 1.0, min: 3, max: 5, looting-bonus-per-level: 0.0}
+  WITHER_SKELETON:
+    - {item: infernal_shard, chance: 0.04, min: 1, max: 1, looting-bonus-per-level: 0.01}
+  PIGLIN_BRUTE:
+    - {item: infernal_shard, chance: 0.20, min: 1, max: 2, looting-bonus-per-level: 0.05}
+  BLAZE:
+    - {item: infernal_shard, chance: 0.015, min: 1, max: 1, looting-bonus-per-level: 0.005}
+
+chest-loot:
+  "minecraft:chests/bastion_treasure":
+    - {item: infernal_upgrade_template, chance: 0.35, min: 1, max: 1}
+    - {item: infernal_shard, chance: 0.60, min: 1, max: 3}
+  "minecraft:chests/nether_bridge":
+    - {item: infernal_upgrade_template, chance: 0.06, min: 1, max: 1}
+    - {item: infernal_shard, chance: 0.15, min: 1, max: 2}
+  "minecraft:chests/bastion_other":
+    - {item: infernal_shard, chance: 0.10, min: 1, max: 1}

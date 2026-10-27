@@ -1,0 +1,18 @@
+name: AdvancedGear
+version: '${project.version}'
+main: dev.advancedgear.AdvancedGearPlugin
+api-version: '26.3'
+description: Five gear tiers above Netherite with smithing upgrades, abilities and custom weapons.
+commands:
+  advancedgear:
+    description: AdvancedGear admin command
+    usage: /advancedgear <give|template|reload|inspect|recipes|version>
+    aliases: [agear, ag]
+    permission: advancedgear.admin
+permissions:
+  advancedgear.admin:
+    description: Use every /advancedgear subcommand
+    default: op
+  advancedgear.use:
+    description: Use custom gear abilities
+    default: true
