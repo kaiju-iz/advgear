@@ -1,0 +1,142 @@
+# Every custom item. The key is the persistent item id (stored in PersistentDataContainer).
+# stats.damage / stats.attack-speed are TOTAL values (what the tooltip shows).
+# upgrade-from: a vanilla material (Netherite -> Infernal) or another custom item id (later tiers).
+items:
+  infernal_shard:
+    material: ECHO_SHARD
+    tier: infernal
+    category: material
+    name: "Infernal Shard"
+    lore: ["A fragment of Netherforged slag,", "still warm to the touch.", "Combine three with a Netherite Ingot."]
+    glint: true
+
+  infernal_ingot:
+    material: NETHERITE_SCRAP
+    tier: infernal
+    category: material
+    name: "Infernal Ingot"
+    lore: ["Smelted from Netherforged shards.", "Used to upgrade Netherite gear."]
+    glint: true
+
+  infernal_upgrade_template:
+    material: NETHERITE_UPGRADE_SMITHING_TEMPLATE
+    tier: infernal
+    category: template
+    name: "Infernal Upgrade Template"
+    lore: ["Smithing Template", "", "Applies to: Netherite equipment", "Ingredients: Infernal Ingot"]
+    glint: true
+
+  infernal_helmet:
+    material: NETHERITE_HELMET
+    tier: infernal
+    category: armor
+    set: infernal
+    slot: HEAD
+    name: "Infernal Helmet"
+    lore: ["Reduces fire damage and burn time."]
+    upgrade-from: NETHERITE_HELMET
+    equipment-model: infernal
+    stats: {armor: 3.5, toughness: 3.5, knockback-resistance: 0.1, durability: 450}
+  infernal_chestplate:
+    material: NETHERITE_CHESTPLATE
+    tier: infernal
+    category: armor
+    set: infernal
+    slot: CHEST
+    name: "Infernal Chestplate"
+    lore: ["Reduces fire damage and burn time."]
+    upgrade-from: NETHERITE_CHESTPLATE
+    equipment-model: infernal
+    stats: {armor: 8.5, toughness: 3.5, knockback-resistance: 0.1, durability: 650}
+  infernal_leggings:
+    material: NETHERITE_LEGGINGS
+    tier: infernal
+    category: armor
+    set: infernal
+    slot: LEGS
+    name: "Infernal Leggings"
+    lore: ["Reduces fire damage and burn time."]
+    upgrade-from: NETHERITE_LEGGINGS
+    equipment-model: infernal
+    stats: {armor: 6.5, toughness: 3.5, knockback-resistance: 0.1, durability: 610}
+  infernal_boots:
+    material: NETHERITE_BOOTS
+    tier: infernal
+    category: armor
+    set: infernal
+    slot: FEET
+    name: "Infernal Boots"
+    lore: ["Reduces fire damage and burn time."]
+    upgrade-from: NETHERITE_BOOTS
+    equipment-model: infernal
+    stats: {armor: 3.5, toughness: 3.5, knockback-resistance: 0.1, durability: 530}
+
+  infernal_sword:
+    material: NETHERITE_SWORD
+    tier: infernal
+    category: tool
+    name: "Infernal Sword"
+    lore: ["A blade quenched in magma."]
+    upgrade-from: NETHERITE_SWORD
+    stats: {damage: 9.0, attack-speed: 1.6, durability: 2650}
+  infernal_pickaxe:
+    material: NETHERITE_PICKAXE
+    tier: infernal
+    category: tool
+    name: "Infernal Pickaxe"
+    lore: ["Smelts raw iron, gold and copper", "as you mine them (Magma Touch)."]
+    upgrade-from: NETHERITE_PICKAXE
+    abilities: [magma_touch]
+    stats: {damage: 6.0, attack-speed: 1.2, durability: 2650, mining-efficiency: 3.0}
+  infernal_axe:
+    material: NETHERITE_AXE
+    tier: infernal
+    category: tool
+    name: "Infernal Axe"
+    lore: ["Bites deep. Heat-hardened edge."]
+    upgrade-from: NETHERITE_AXE
+    stats: {damage: 10.0, attack-speed: 1.0, durability: 2650, mining-efficiency: 3.0}
+  infernal_shovel:
+    material: NETHERITE_SHOVEL
+    tier: infernal
+    category: tool
+    name: "Infernal Shovel"
+    lore: ["Digs through anything cold."]
+    upgrade-from: NETHERITE_SHOVEL
+    stats: {damage: 6.5, attack-speed: 1.0, durability: 2650, mining-efficiency: 3.0}
+  infernal_hoe:
+    material: NETHERITE_HOE
+    tier: infernal
+    category: tool
+    name: "Infernal Hoe"
+    lore: ["Tills ash and soil alike."]
+    upgrade-from: NETHERITE_HOE
+    stats: {damage: 1.0, attack-speed: 4.0, durability: 2650, mining-efficiency: 3.0}
+
+  greatsword:
+    material: NETHERITE_SWORD
+    tier: infernal
+    category: weapon
+    family: greatsword
+    name: "Infernal Greatsword"
+    lore: ["Heavy and slow. Hits cleave nearby foes.", "Right-click: Magma Slam - a burning ground slam."]
+    abilities: [magma_slam, cleave]
+    stats: {damage: 11.0, attack-speed: 0.9, durability: 2800, reach: 0.5}
+  ember_dagger:
+    material: NETHERITE_SWORD
+    tier: infernal
+    category: weapon
+    family: dagger
+    name: "Ember Dagger"
+    lore: ["Fast and vicious. Backstabs burn.", "Right-click: Flame Flurry - empowers your next hits."]
+    abilities: [flame_flurry, backstab]
+    stats: {damage: 5.0, attack-speed: 3.0, durability: 1800}
+  magma_warhammer:
+    material: MACE
+    tier: infernal
+    category: weapon
+    family: warhammer
+    name: "Magma Warhammer"
+    lore: ["Falling smashes send a burning shockwave", "through everything nearby."]
+    abilities: [shockwave]
+    stats: {damage: 9.0, attack-speed: 0.7, durability: 2400}

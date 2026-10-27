@@ -1,0 +1,133 @@
+# ============================ AdvancedGear ============================
+debug: false
+
+resource-pack:
+  enabled: false
+  url: ""
+  sha1: ""            # 40 hex characters (SHA-1, not SHA-256)
+  required: true
+
+# How players trigger ACTIVE weapon abilities: RIGHT_CLICK or SNEAK_RIGHT_CLICK
+controls:
+  active-ability: RIGHT_CLICK
+
+# Master feature toggles
+features:
+  abilities: true
+  armor-sets: true
+  loot: true
+  recipes-auto-discover: true     # unlock custom crafting recipes in the recipe book on join
+
+worlds:
+  disabled: []                    # abilities and set bonuses are off in these worlds (item names, e.g. [world_creative])
+
+pvp:
+  abilities-vs-players: true      # false = abilities never damage other players
+  damage-multiplier: 0.75         # ability/passive bonus damage multiplier when the target is a player
+  friendly-fire: false            # false = never harm players on your scoreboard team
+  boss-damage-multiplier: 0.5     # ability damage multiplier against Wither/Ender Dragon and other bosses
+  ignore-entity-types: [ARMOR_STAND, VILLAGER, WANDERING_TRADER]
+
+smithing:
+  consume-template: true          # false = Upgrade Templates are returned after each upgrade (reusable)
+  preserve-enchantments: true
+  preserve-name: true
+  preserve-trim: true
+  preserve-durability-ratio: true
+
+effects:
+  particles: true
+  sounds: true
+  max-particles-per-effect: 60
+  action-bar-feedback: true
+
+# ---------------------------------------------------------------- Tiers
+tiers:
+  infernal:
+    display-name: "Infernal"
+    color: "#ff6a2b"
+    previous: netherite
+    template: infernal_upgrade_template
+    ingot: infernal_ingot
+    # Netherite -> Infernal. Later tiers (astral, celestial, primordial, eternal) plug in here.
+
+# ---------------------------------------------------------------- Armor set bonuses
+armor-sets:
+  infernal:
+    fire-reduction-per-piece: 0.12      # fire/lava/magma damage reduction per worn piece
+    full-set-fire-bonus: 0.20           # extra reduction with all four pieces
+    max-fire-reduction: 0.80
+    burn-duration-reduction-per-piece: 0.10
+    full-set:
+      ignite-on-hit-seconds: 3.0        # your melee hits ignite the target
+      ignite-on-hit-cooldown-seconds: 1.0
+      retaliation:
+        chance: 0.25                    # chance to ignite an attacker that hits you
+        ignite-seconds: 4.0
+        cooldown-seconds: 6.0
+        particle: flame
+        sound: item.firecharge.use
+
+# ---------------------------------------------------------------- Abilities
+abilities:
+  magma_slam:                           # Infernal Greatsword - active
+    enabled: true
+    display-name: "Magma Slam"
+    damage: 10.0
+    radius: 4.5
+    knockback: 1.1
+    launch: 0.55
+    ignite-seconds: 4.0
+    cooldown-seconds: 14.0
+    disabled-worlds: []
+    particle: flame
+    sound: entity.generic.explode
+  cleave:                               # Infernal Greatsword - passive
+    enabled: true
+    display-name: "Cleave"
+    radius: 2.5
+    damage-fraction: 0.4
+    max-targets: 3
+    disabled-worlds: []
+    particle: sweep_attack
+    sound: entity.player.attack.sweep
+  flame_flurry:                         # Ember Dagger - active: next hits are empowered
+    enabled: true
+    display-name: "Flame Flurry"
+    hits: 3
+    duration-seconds: 6.0
+    bonus-damage: 2.5
+    ignite-seconds: 3.0
+    cooldown-seconds: 16.0
+    disabled-worlds: []
+    particle: flame
+    sound: item.firecharge.use
+  backstab:                             # Ember Dagger - passive
+    enabled: true
+    display-name: "Backstab"
+    damage-multiplier: 0.75             # +75% damage when hitting from behind
+    behind-dot: 0.5                     # 1.0 = exactly behind, 0 = side-on
+    ignite-seconds: 2.0
+    internal-cooldown-seconds: 2.0
+    disabled-worlds: []
+    particle: crit
+    sound: entity.player.attack.crit
+  shockwave:                            # Magma Warhammer - passive on falling hits
+    enabled: true
+    display-name: "Shockwave"
+    min-fall-distance: 2.0
+    radius: 3.5
+    damage: 6.0
+    knockback: 0.9
+    ignite-seconds: 3.0
+    internal-cooldown-seconds: 4.0
+    disabled-worlds: []
+    particle: lava
+    sound: entity.generic.explode
+  magma_touch:                          # Infernal Pickaxe - smelts selected drops
+    enabled: true
+    display-name: "Magma Touch"
+    allowed-drops: [RAW_IRON, RAW_GOLD, RAW_COPPER]
+    disabled-worlds: []
+    particle: flame
+    sound: block.fire.extinguish
